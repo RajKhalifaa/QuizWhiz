@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 95% 98%;
+    --foreground: 222 47% 11%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+    
+    --border: 231 80% 90%;
+    --input: 214.3 31.8% 91.4%;
+    
+    --primary: 231 100% 65%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 16 100% 70%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --accent: 231 80% 90%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    
+    --destructive: 0 100% 63%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --ring: 231 100% 65%;
+    
+    --radius: 0.75rem;
+    
+    /* Chart colors */
+    --chart-1: 231 100% 65%;
+    --chart-2: 16 100% 70%;
+    --chart-3: 120 100% 40%;
+    --chart-4: 200 100% 60%;
+    --chart-5: 300 100% 70%;
+    
+    /* Sidebar colors */
+    --sidebar-background: 231 100% 65%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 231 100% 65%;
+    --sidebar-accent: 231 80% 90%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 231 80% 90%;
+    --sidebar-ring: 210 40% 98%;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  .font-nunito {
+    font-family: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  .child-friendly-shadow {
+    box-shadow: 0 4px 8px rgba(74, 111, 255, 0.2);
+  }
+  
+  .quiz-option {
+    @apply border-2 border-border rounded-lg p-4 cursor-pointer transition-all duration-300;
+  }
+  
+  .quiz-option:hover {
+    transform: translateY(-3px);
+    @apply child-friendly-shadow;
+  }
+  
+  .quiz-option.selected {
+    @apply border-primary bg-primary/10;
+  }
+  
+  .quiz-option.correct {
+    @apply border-[#66BB6A] bg-[#66BB6A]/20;
+  }
+  
+  .quiz-option.incorrect {
+    @apply border-destructive bg-destructive/20;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce 3s linear infinite;
+  }
+}
